@@ -1,5 +1,5 @@
 import React, { cloneElement } from "react";
-const PizzaData = () => {
+const PizzaData = (props) => {
     const pizzaData = [
         {
           name: "Focaccia",
@@ -60,9 +60,14 @@ const PizzaData = () => {
           })
       
     return ( 
-      <div>
-        <img src="./pizzas/focaccia.jpg" alt="" />
-        <h2>Pizza Focaccia</h2>
+      <div className="pizza">
+        <img src={props.image} alt="" />
+        <div>
+
+        <h3>{props.name}</h3>
+        <p>{props.ingredients}</p>
+        <span>{props.price}</span>
+        </div>
       </div>
      );
 }
