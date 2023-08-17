@@ -1,7 +1,17 @@
 import React from 'react';
+import PizzaData from "./PizzaData"
 
 const Menu = () => {
-    return ( <h1>This is menu</h1> );
+    return ( <div>
+
+    <PizzaData />
+    <PizzaData />
+    <PizzaData />
+    
+    
+    </div>
+    
+    );
 }
  
 export default Menu;

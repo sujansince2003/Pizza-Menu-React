@@ -1,4 +1,4 @@
-import React from "react";
+import React, { cloneElement } from "react";
 const PizzaData = () => {
     const pizzaData = [
         {
@@ -44,9 +44,27 @@ const PizzaData = () => {
           soldOut: false,
         },
       ];
-      //data ends here
       
-    return ( <h1>Hello i am data componet</h1> );
+      //data ends here
+      // const pizzaName=
+      const pizzaName=pizzaData.map(pizname=>
+        {
+        return pizname.name
+        
+        }).map(nm=>
+          {
+             
+             return nm.indexOf(" ")>0? nm.slice(nm.indexOf(" ")):nm;
+             
+            
+          })
+      
+    return ( 
+      <div>
+        <img src="./pizzas/focaccia.jpg" alt="" />
+        <h2>Pizza Focaccia</h2>
+      </div>
+     );
 }
  
 export default PizzaData;
