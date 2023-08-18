@@ -45,21 +45,26 @@ const pizzaobj = [
     },
   ];
 const Menu = () => {
+    const pizzanum=pizzaobj.length;
+   
    
     return (
 <main className='menu'>
      <h2>Our Menu</h2>
-     
-      <ul className='pizzas'>
+     {
+        pizzanum>0?(<ul className='pizzas'>
         {
             pizzaobj.map((pizza,index)=>
 
                  (<PizzaData key={index} pizzadata={pizza} />   )
+                //  we will use exact pizzadata name to destruct props
             
                 )
         }
      
-    </ul> 
+    </ul> ): <p>Not available</p>
+     }
+      
     
     
 </main>

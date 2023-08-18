@@ -1,6 +1,7 @@
-import React, { cloneElement } from "react";
- const PizzaData = (props) => {
-   
+import React from "react";
+ const PizzaData = ({pizzadata}) => {
+   //destructing props here we are using exact name that is used to pass
+   //props in menu.jsx
       
       //data ends here
       // const pizzaName=
@@ -15,15 +16,15 @@ import React, { cloneElement } from "react";
              
             
       //     })
-      
+
     return ( 
-      <li className="pizza">
-        <img src={props.pizzadata.photoName} alt="" />
+      <li className={`pizza ${pizzadata.soldOut?"sold-out":null} `}>
+        <img src={pizzadata.photoName} alt="" />
         <div>
 
-        <h3>{props.pizzadata.name}</h3>
-        <p>{props.pizzadata.ingredients}</p>
-        <span>{props.pizzadata.price}</span>
+        <h3>{pizzadata.name}</h3>
+        <p>{pizzadata.ingredients}</p>
+        <span>{pizzadata.soldOut?"Sold Out":pizzadata.price}</span>
         </div>
       </li>
      );
